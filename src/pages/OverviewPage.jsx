@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Header from '../components/common/Header';
 import StatCard from '../components/common/StatCard';
 import { BarChart2, ShoppingBag, Users, Zap } from 'lucide-react';
+import SalesOverviewCharts from '../components/overview/SalesOverviewCharts';
 
 const OverviewPage = () => {
   return (
@@ -41,6 +42,10 @@ const OverviewPage = () => {
             color="#10B981"
           />
         </motion.div>
+        {/* CHARTS */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <SalesOverviewCharts />
+        </div>
       </main>
     </div>
   );

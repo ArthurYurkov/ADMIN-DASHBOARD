@@ -21,7 +21,7 @@ const StatCard = ({ name, icon: Icon, value, color }) => {
 
 StatCard.propTypes = {
   name: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   value: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
 };
