@@ -39,6 +39,19 @@ function Sidebar() {
         >
           <Menu size={24} />
         </motion.button>
+        <AnimatePresence>
+          {isSidebarOpen && (
+            <motion.span
+              className="absolute left-20 top-6 cursor-pointer whitespace-nowrap"
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: 'auto' }}
+              exit={{ opacity: 0, width: 0 }}
+              transition={{ duration: 0.2, delay: 0.3 }}
+            >
+              ADMIN
+            </motion.span>
+          )}
+        </AnimatePresence>
         <nav className="mt-8 flex-grow">
           {SIDEBAR_ITEMS.map(item => (
             <Link key={item.href} to={item.href}>
