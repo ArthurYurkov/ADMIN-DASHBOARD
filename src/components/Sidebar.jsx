@@ -42,13 +42,13 @@ function Sidebar() {
         <AnimatePresence>
           {isSidebarOpen && (
             <motion.span
-              className="absolute left-20 top-6 cursor-pointer whitespace-nowrap"
+              className="absolute left-20 top-5 cursor-pointer whitespace-nowrap"
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: 'auto' }}
               exit={{ opacity: 0, width: 0 }}
               transition={{ duration: 0.2, delay: 0.3 }}
             >
-              ADMIN
+              <h2 className="text-2xl font-semibold text-gray-100">ADMIN</h2>
             </motion.span>
           )}
         </AnimatePresence>

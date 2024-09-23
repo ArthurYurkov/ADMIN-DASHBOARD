@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import Header from '../components/common/Header';
-import StatCard from '../components/common/StatCard';
 import { UserCheck, UserPlus, UsersIcon, UserX } from 'lucide-react';
 
+import Header from '../components/common/Header';
+import StatCard from '../components/common/StatCard';
 import UsersTable from '../components/users/UsersTable';
 import UsersGrowthChart from '../components/users/UsersGrowthChart';
-import UsersActivityChart from '../components/users/UsersActivityChart';
 import UsersDemographicsChart from '../components/users/UsersDemographicsChart';
+import UsersActivityHeatMap from '../components/users/UsersActivityHeatMap';
 
-const userStats = {
+const USER_STATS = {
   totalUsers: 152845,
   newUsersToday: 243,
   activeUsers: 98520,
@@ -30,25 +30,25 @@ const UsersPage = () => {
           <StatCard
             name="Total Users"
             icon={UsersIcon}
-            value={userStats.totalUsers.toLocaleString()}
+            value={USER_STATS.totalUsers.toLocaleString()}
             color="#6366F1"
           />
           <StatCard
             name="New Users Today"
             icon={UserPlus}
-            value={userStats.newUsersToday}
+            value={USER_STATS.newUsersToday}
             color="#10B981"
           />
           <StatCard
             name="Active Users"
             icon={UserCheck}
-            value={userStats.activeUsers.toLocaleString()}
+            value={USER_STATS.activeUsers.toLocaleString()}
             color="#F59E0B"
           />
           <StatCard
             name="Churn Rate"
             icon={UserX}
-            value={userStats.churnRate}
+            value={USER_STATS.churnRate}
             color="#EF4444"
           />
         </motion.div>
@@ -57,7 +57,7 @@ const UsersPage = () => {
         {/* USERS CHARTS */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <UsersGrowthChart />
-          <UsersActivityChart />
+          <UsersActivityHeatMap />
           <UsersDemographicsChart />
         </div>
       </main>

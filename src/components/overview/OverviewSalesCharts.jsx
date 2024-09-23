@@ -24,7 +24,7 @@ const salesData = [
   { name: 'Jun', sales: 7500 },
 ];
 
-const SalesOverviewChart = () => {
+const OverviewSalesCharts = () => {
   return (
     <motion.div
       className="rounded-xl border border-gray-700 bg-gray-800 bg-opacity-50 p-6 shadow-lg backdrop-blur-md"
@@ -61,4 +61,4 @@ const SalesOverviewChart = () => {
     </motion.div>
   );
 };
-export default SalesOverviewChart;
+export default OverviewSalesCharts;
