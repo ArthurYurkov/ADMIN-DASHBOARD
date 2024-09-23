@@ -1,41 +1,40 @@
 import { motion } from 'framer-motion';
 import {
-  BarChart,
-  Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
   ResponsiveContainer,
 } from 'recharts';
 
-const DAILY_SALES_DATA = [
-  { name: 'Mon', sales: 1000 },
-  { name: 'Tue', sales: 1200 },
-  { name: 'Wed', sales: 900 },
-  { name: 'Thu', sales: 1100 },
-  { name: 'Fri', sales: 1300 },
-  { name: 'Sat', sales: 1600 },
-  { name: 'Sun', sales: 1400 },
+const DAILY_ORDER_DATA = [
+  { date: '07/01', orders: 45 },
+  { date: '07/02', orders: 52 },
+  { date: '07/03', orders: 49 },
+  { date: '07/04', orders: 60 },
+  { date: '07/05', orders: 55 },
+  { date: '07/06', orders: 58 },
+  { date: '07/07', orders: 62 },
 ];
 
-const DailySalesTrend = () => {
+const DailyOrders = () => {
   return (
     <motion.div
       className="rounded-xl border border-gray-700 bg-gray-800 bg-opacity-50 p-6 shadow-lg backdrop-blur-md"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
+      transition={{ delay: 0.2 }}
     >
-      <h2 className="mb-4 text-xl font-semibold text-gray-100">
-        Daily Sales Trend
-      </h2>
+      <h2 className="mb-4 text-xl font-semibold text-gray-100">Daily Orders</h2>
 
       <div style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
-          <BarChart data={DAILY_SALES_DATA}>
+          <LineChart data={DAILY_ORDER_DATA}>
             <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-            <XAxis dataKey="name" stroke="#9CA3AF" />
+            <XAxis dataKey="date" stroke="#9CA3AF" />
             <YAxis stroke="#9CA3AF" />
             <Tooltip
               contentStyle={{
@@ -44,12 +43,17 @@ const DailySalesTrend = () => {
               }}
               itemStyle={{ color: '#E5E7EB' }}
             />
-            <Bar dataKey="sales" fill="#10B981" />
-          </BarChart>
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="orders"
+              stroke="#8B5CF6"
+              strokeWidth={2}
+            />
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </motion.div>
   );
 };
-
-export default DailySalesTrend;
+export default DailyOrders;

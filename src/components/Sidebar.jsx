@@ -30,7 +30,7 @@ function Sidebar() {
       className={`relative z-10 flex-shrink-0 transition-all ${isSidebarOpen ? 'w-64' : 'w-20'}`}
       animate={{ width: isSidebarOpen ? 256 : 80 }}
     >
-      <div className="flex h-full flex-col border-r border-gray-700 bg-gray-800 bg-opacity-50 p-4 backdrop-blur-md">
+      <div className="flex h-full scroll-m-8 flex-col border-r border-gray-700 bg-gray-800 bg-opacity-50 p-4 backdrop-blur-md">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTop={{ scale: 0.9 }}
@@ -60,7 +60,7 @@ function Sidebar() {
                   size={20}
                   style={{ color: item.color, minWidth: '20px' }}
                 />
-                <AnimatePresence>
+                <AnimatePresence className="">
                   {isSidebarOpen && (
                     <motion.span
                       className="ml-4 whitespace-nowrap"
