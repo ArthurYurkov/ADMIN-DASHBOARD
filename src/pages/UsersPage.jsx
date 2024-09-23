@@ -4,6 +4,9 @@ import StatCard from '../components/common/StatCard';
 import { UserCheck, UserPlus, UsersIcon, UserX } from 'lucide-react';
 
 import UsersTable from '../components/users/UsersTable';
+import UsersGrowthChart from '../components/users/UsersGrowthChart';
+import UsersActivityChart from '../components/users/UsersActivityChart';
+import UsersDemographicsChart from '../components/users/UsersDemographicsChart';
 
 const userStats = {
   totalUsers: 152845,
@@ -51,6 +54,12 @@ const UsersPage = () => {
         </motion.div>
 
         <UsersTable />
+        {/* USERS CHARTS */}
+        <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <UsersGrowthChart />
+          <UsersActivityChart />
+          <UsersDemographicsChart />
+        </div>
       </main>
     </div>
   );
